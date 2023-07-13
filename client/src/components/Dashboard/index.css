@@ -1,0 +1,277 @@
+.dashboardContent {
+  display: flex;
+  flex-grow: 1;
+  min-height: calc(100vh - 80px);
+}
+
+.dashboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.db-card {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+  margin-bottom: 20px;
+}
+
+.db-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: var(--dark-primary);
+}
+
+.db-card-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.db-card-header a:hover {
+  text-decoration: underline;
+}
+
+.db-card-content {
+  display: flex;
+}
+
+/* ---------------- */
+/* Auth Card */
+/* ---------------- */
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0px;
+  flex-grow: 1;
+}
+
+.auth-card-ctn {
+  display: flex;
+  width: 100%;
+}
+
+.auth-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.auth-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-info-label {
+  text-align: center;
+  border-bottom: 1px solid var(--primary);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.auth-profpic-cont {
+  max-width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1%;
+}
+
+.auth-profpic {
+  max-height: 80%;
+  width: 100%;
+}
+
+/* ---------------- */
+/* Direct Card */
+/* ---------------- */
+.db-direct {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.db-direct-header {
+  max-width: 85vw;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: white;
+}
+
+.db-direct-recent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.db-direct-unread {
+  min-width: max-content;
+  width: 20%;
+  border-left: 1px solid var(--grey);
+}
+
+.db-direct-count {
+  display: flex;
+  justify-content: center;
+  align-items: centers;
+  flex-grow: 1;
+  padding: 10px 20px;
+}
+
+.db-direct-dm {
+  display: grid;
+  grid-template-columns: 20% auto;
+  border-top: 1px solid var(--grey);
+
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.db-direct-usr {
+  background-color: #f5f5f5;
+  overflow: hidden;
+  border-left: 1px solid var(--grey);
+  padding: 5px 10px;
+}
+
+.db-direct-msg {
+  border-left: 1px solid var(--grey);
+  padding: 5px 10px;
+}
+
+/* ---------------- */
+/* Explore Card */
+/* ---------------- */
+
+.explore-logo-ctnr {
+  height: auto;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore-logo {
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+.explore-cont {
+  width: 100%;
+}
+.explore-desc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: white;
+}
+.explore-desc span {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+.rec {
+  display: flex;
+  border-top: 1px solid var(--grey);
+
+  &:first-child {
+    border-top: none;
+  }
+}
+.rec-title {
+  padding: 10px 20px;
+  min-width: 10%;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+.rec-desc {
+  border-left: 1px solid var(--grey);
+  padding: 10px 20px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.rec-type {
+  border-left: 1px solid var(--grey);
+  width: 20%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .auth-card {
+    padding: 0;
+    width: 100%;
+  }
+  .db-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .db-direct {
+    width: 100%;
+  }
+  .db-direct-unread {
+    width: 100%;
+  }
+  .db-card {
+    max-width: 100%;
+  }
+  .rec {
+    display: flex;
+    flex-direction: column;
+  }
+  .rec-desc,
+  .rec-title,
+  .rec-type {
+    width: 100%;
+  }
+  .auth-info-card {
+    width: 100%;
+  }
+  .auth-card {
+    padding: 0;
+    width: max-content;
+  }
+  .auth-info-label {
+    font-size: 16px;
+  }
+  .db-direct-dm {
+    display: flex;
+    flex-direction: column;
+  }
+  .db-direct-unread {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .auth-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .db-card-header {
+    padding: 10px 0px;
+  }
+}

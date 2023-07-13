@@ -42,6 +42,7 @@ class LoginForm extends Component {
               <a href="#/">Forgot Password</a>
             </p>
             <button className="animation a6">LOGIN</button>
+            <div className="error"></div>
           </form>
         </div>
         <div className="right"></div>

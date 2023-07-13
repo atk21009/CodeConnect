@@ -1,60 +1,11 @@
 import React from "react";
-import Footer from "./comps/Footer";
+import Footer from "../comps/Footer";
+import imglist from "./Imgs";
 
-import js from "../constants/imgs/lang_icons/java-script.png";
-import html from "../constants/imgs/lang_icons/html-5-logo.png";
-import css from "../constants/imgs/lang_icons/css-3.png";
-import j from "../constants/imgs/lang_icons/java.png";
-import cSharp from "../constants/imgs/lang_icons/c-sharp.png";
-import php from "../constants/imgs/lang_icons/php.png";
-import rust from "../constants/imgs/lang_icons/rust.png";
-import sql from "../constants/imgs/lang_icons/sql-server.png";
+import logo_black from "../../constants/imgs/logo/code-connect--logo-white.png";
+import icon from "../../constants/imgs/logo/code-connect-website-favicon-white.png";
 
-import logo_black from "../constants/imgs/logo/code-connect--logo-white.png";
-import icon from "../constants/imgs/logo/code-connect-website-favicon-white.png";
-
-const imglist = [
-  {
-    id: 1,
-    src: js,
-    alt: "Javascript",
-  },
-  {
-    id: 2,
-    src: html,
-    alt: "HTML 5",
-  },
-  {
-    id: 3,
-    src: css,
-    alt: "CSS 3",
-  },
-  {
-    id: 4,
-    src: j,
-    alt: "Java",
-  },
-  {
-    id: 5,
-    src: cSharp,
-    alt: "C#",
-  },
-  {
-    id: 6,
-    src: php,
-    alt: "PHP",
-  },
-  {
-    id: 7,
-    src: rust,
-    alt: "Rust",
-  },
-  {
-    id: 8,
-    src: sql,
-    alt: "SQL",
-  },
-];
+import "./index.css";
 
 let isDown = false;
 let startX;
@@ -82,7 +33,6 @@ function mm(e) {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
-  console.log(e.pageX, slider.offsetLeft);
   const SCROLL_SPEED = 3;
   const walk = (x - startX) * SCROLL_SPEED;
   slider.scrollLeft = scrollLeft - walk;
@@ -124,9 +74,7 @@ export default function Landing() {
         </div>
         <div className="landing-card">
           <div className="l-header">
-            <span>
-              <a href="#/">Programming Languages</a>
-            </span>
+            <a href="#/">Programming Languages</a>
           </div>
 
           <div className="l-content">

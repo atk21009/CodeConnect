@@ -1,8 +1,36 @@
 import React from "react";
 
-import icon from "../../constants/imgs/logo/code-connect--logo-white.png";
+import icon from "../../../constants/imgs/logo/code-connect--logo-white.png";
+import { Lang, Con, Col, Jobs } from "../Header/MenuItems";
+import { Link } from "react-router-dom";
+import "./index.css";
 
 export default function Footer() {
+  function renderLinks(links) {
+    return links.map((item, index) => {
+      return (
+        <Link className="item-l" to={item.path} key={index}>
+          {item.title}
+        </Link>
+      );
+    });
+  }
+
+  function renderContent(id) {
+    switch (id) {
+      case "Lang":
+        return renderLinks(Lang);
+      case "Con":
+        return renderLinks(Con);
+      case "Col":
+        return renderLinks(Col);
+      case "Jobs":
+        return renderLinks(Jobs);
+      default:
+        return;
+    }
+  }
+
   return (
     <div className="footer">
       <div className="footer-content">
@@ -10,54 +38,25 @@ export default function Footer() {
           <a href="#/" className="item-header">
             Languages
           </a>
-          <a href="#/" className="item-l">
-            Javascript
-          </a>
-          <a href="#/" className="item-l">
-            HTML
-          </a>
-          <a href="#/" className="item-l">
-            CSS
-          </a>
-          <a href="#/" className="item-l">
-            Java
-          </a>
-          <a href="#/" className="item-l">
-            C#
-          </a>
-          <a href="#/" className="item-l">
-            PHP
-          </a>
-          <a href="#/" className="item-l">
-            Rust
-          </a>
-          <a href="#/" className="item-l">
-            SQL
-          </a>
+          {renderContent("Lang")}
         </div>
         <div className="footer-item">
           <a href="#/" className="item-header">
             Concepts
           </a>
-          <a href="#/" className="item-l">
-            TEST
-          </a>
+          {renderContent("Con")}
         </div>
         <div className="footer-item">
           <a href="#/" className="item-header">
-            Collaboration
+            Connect
           </a>
-          <a href="#/" className="item-l">
-            TEST
-          </a>
+          {renderContent("Col")}
         </div>
         <div className="footer-item">
           <a href="#/" className="item-header">
             Employment
           </a>
-          <a href="#/" className="item-l">
-            TEST
-          </a>
+          {renderContent("Jobs")}
         </div>
         <div className="footer-item">
           <a href="#/" className="item-header">

@@ -1,10 +1,8 @@
 # Code Connect
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+Javascript was the primary language used in this application to add functionality to my web application to create an authentication system that stores users' emails and data, sends out emails to users, updates recent news articles, and additional features.
 
-{Provide a description of the software that you wrote to demonstrate the JavaScript language.}
-
-{Describe your purpose for writing this software.}
+Code Connect is an open platform application aimed at beginner, intermediate, and advanced programmers. The idea of this program is to give resources to programmers so that they can connect with others and also improve their skills.
 
 {Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
 

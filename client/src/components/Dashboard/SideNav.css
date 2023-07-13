@@ -1,0 +1,77 @@
+.SideNav {
+  background-color: #363d45;
+  width: 15vw;
+  min-width: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SideNav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.SideNav a:hover {
+  background-color: var(--primary-hover);
+}
+
+.SideNav-top {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.SideNav-btm {
+  background-color: white;
+}
+
+.SideNav-Item {
+  background-color: var(--bs-dark);
+  display: flex;
+  align-items: center;
+}
+
+.SideNav-Item .btm {
+  background-color: var(--bs-dark);
+  display: flex;
+  align-items: center;
+}
+
+.sidenav-img-link {
+  width: 80%;
+  height: 80%;
+  max-height: 50px;
+  max-width: 15vw;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .SideNav {
+    width: max-content;
+    max-width: 15vw;
+  }
+  .SideNav-Item {
+    width: 100%;
+  }
+  .SideNav a {
+    padding: 5%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+  }
+  .SideNav-Item a .txt {
+    display: none;
+  }
+  .sidenav-img-link {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .txt {
+    font-size: 1.6vw;
+  }
+}

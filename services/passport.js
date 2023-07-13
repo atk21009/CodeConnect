@@ -24,7 +24,6 @@ passport.use(
       passwordField: "password",
     },
     async (email, password, done) => {
-      console.log(email, password);
       if (email) {
         email = email.toLowerCase();
       }
@@ -50,24 +49,21 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, email, password, done) => {
-      console.log(email, password);
       if (email) {
         email = email.toLowerCase();
       }
-      console.log("1");
+
       if (!req.user) {
         const user = await User.findOne({ "local.email": email });
-        console.log(user);
-        console.log("3");
         if (user) {
-          console.log("4");
           return done(null, user);
         } else {
-          console.log("2");
           var newUser = new User();
+          newUser.local.username = req.body.username;
           newUser.local.email = email;
           newUser.local.password = newUser.generateHash(password);
           newUser.save();
+          done(null, newUser);
         }
       } else {
         return done(null, req.user);

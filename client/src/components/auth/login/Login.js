@@ -3,6 +3,8 @@ import LoginForm from "./LoginForm";
 import * as actions from "../../../store/actions";
 import { connect } from "react-redux";
 
+import "../authScreens.css";
+
 class Login extends Component {
   render() {
     return (

@@ -1,8 +1,9 @@
-# keys 
+#Keys 
 dev.js
 prod.js
 
 # dependencies
+/client/node_modules
 /node_modules
 /.pnp
 .pnp.js
