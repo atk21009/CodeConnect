@@ -21,7 +21,7 @@ export default function SideNav() {
           <a href="#/">
             <span className="txt">Direct Message</span>
             <img
-              src={icons.user}
+              src={icons.send}
               alt="prfl-link"
               className="sidenav-img-link"
             />
@@ -31,7 +31,7 @@ export default function SideNav() {
           <a href="#/">
             <span className="txt">Subscriptions</span>
             <img
-              src={icons.user}
+              src={icons.subscribe}
               alt="prfl-link"
               className="sidenav-img-link"
             />
@@ -43,7 +43,7 @@ export default function SideNav() {
           <a href="#/">
             <span className="txt">Settings</span>
             <img
-              src={icons.user}
+              src={icons.setting}
               alt="prfl-link"
               className="sidenav-img-link"
             />

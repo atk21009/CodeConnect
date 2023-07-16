@@ -68,10 +68,6 @@ class Dashboard extends Component {
                           </span>
                         </div>
                       </div>
-                      <div>
-                        <span>TEST</span>
-                        <span>TEST</span>
-                      </div>
                     </div>
                   </div>
                 </div>
