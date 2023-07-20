@@ -9,6 +9,12 @@ import Landing from "./Landing";
 import Dashboard from "./Dashboard";
 import Signup from "./auth/signup/Signup";
 import Login from "./auth/login/Login";
+import Profile from "./Dashboard/sub/Profile";
+import DirectMessage from "./Dashboard/sub/DirectMessage";
+import Subscriptions from "./Dashboard/sub/Subscriptions";
+import Explore from "./Dashboard/sub/Explore";
+import Settings from "./Dashboard/sub/Settings";
+
 import Navbar from "./comps/Header/Navbar";
 
 import Lang from "./Lang";
@@ -59,6 +65,11 @@ class App extends Component {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/messages" element={<DirectMessage />} />
+          <Route exact path="/subscriptions" element={<Subscriptions />} />
+          <Route exact path="/explore" element={<Explore />} />
+          <Route exact path="/settings" element={<Settings />} />
 
           {/* Languages Routes */}
           <Route exact path="/languages" element={<Lang />} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./SideNav.css";
 import icons from "../../constants/imgs/icons";
@@ -8,46 +9,46 @@ export default function SideNav() {
     <div className="SideNav">
       <div className="SideNav-top">
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/profile">
             <span className="txt">Profile</span>
             <img
               src={icons.user}
               alt="prfl-link"
               className="sidenav-img-link"
             />
-          </a>
+          </Link>
         </div>
         <div className="SideNav-Item">
-          <a href="#/">
-            <span className="txt">Direct Message</span>
+          <Link to="/messages">
+            <span className="txt">Message</span>
             <img
               src={icons.send}
               alt="prfl-link"
               className="sidenav-img-link"
             />
-          </a>
+          </Link>
         </div>
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/subscriptions">
             <span className="txt">Subscriptions</span>
             <img
               src={icons.subscribe}
               alt="prfl-link"
               className="sidenav-img-link"
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="SideNav-btm">
         <div className="SideNav-Item btm">
-          <a href="#/">
+          <Link to="/settings">
             <span className="txt">Settings</span>
             <img
               src={icons.setting}
               alt="prfl-link"
               className="sidenav-img-link"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

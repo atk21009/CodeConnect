@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import "./index.css";
 import Loading from "../../constants/Loading";
@@ -73,7 +74,7 @@ class Dashboard extends Component {
                 </div>
                 <div className="db-card">
                   <div className="db-card-header">
-                    <a href="./messages">Messages</a>
+                    <Link to="/messages">Messages</Link>
                   </div>
                   <div className="db-card-content">
                     <div className="db-direct">
@@ -97,7 +98,7 @@ class Dashboard extends Component {
                 </div>
                 <div className="db-card">
                   <div className="db-card-header">
-                    <a href="./subscriptions">Subscriptions</a>
+                    <Link to="/subscriptions">Subscriptions</Link>
                   </div>
                   <div className="db-card-content">
                     <div className="db-direct">
@@ -123,7 +124,7 @@ class Dashboard extends Component {
                 </div>
                 <div className="db-card">
                   <div className="db-card-header">
-                    <a href="./explore">Explore</a>
+                    <Link to="/explore">Explore</Link>
                   </div>
                   <div className="db-card-content">
                     <div className="explore-cont">

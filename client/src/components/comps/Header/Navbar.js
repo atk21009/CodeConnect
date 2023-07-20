@@ -21,13 +21,21 @@ class Navbar extends Component {
     switch (this.props.location.pathname) {
       case "/login":
         return (
-          <Link to="/signup" onClick={() => this.closeMobileMenu()}>
+          <Link
+            className="nav-link-auth"
+            to="/signup"
+            onClick={() => this.closeMobileMenu()}
+          >
             Sign Up
           </Link>
         );
       default:
         return (
-          <Link to="/login" onClick={() => this.closeMobileMenu()}>
+          <Link
+            className="nav-link-auth"
+            to="/login"
+            onClick={() => this.closeMobileMenu()}
+          >
             Login
           </Link>
         );
@@ -84,7 +92,7 @@ class Navbar extends Component {
       default:
         return (
           <>
-            <li className="nav-item">
+            <div className="nav-item">
               <Link
                 to="/dashboard"
                 className="nav-links"
@@ -92,8 +100,8 @@ class Navbar extends Component {
               >
                 Dashboard
               </Link>
-            </li>
-            <li className="nav-item-auth">
+            </div>
+            <div className="nav-item-auth">
               <a
                 href="/auth/logout"
                 className="nav-link-auth"
@@ -101,7 +109,7 @@ class Navbar extends Component {
               >
                 Logout
               </a>
-            </li>
+            </div>
           </>
         );
     }

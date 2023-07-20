@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../../Dashboard/SideNav.css";
 
@@ -7,48 +8,48 @@ export default function SideNav() {
     <div className="SideNav">
       <div className="SideNav-top">
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/javascript">
             <span className="txt">Javascript</span>
-          </a>
+          </Link>
         </div>
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/html">
             <span className="txt">HTML</span>
-          </a>
+          </Link>
         </div>
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/css">
             <span className="txt">CSS</span>
-          </a>
+          </Link>
         </div>
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/java">
             <span className="txt">Java</span>
-          </a>
+          </Link>
         </div>
 
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/csharp">
             <span className="txt">C#</span>
-          </a>
+          </Link>
         </div>
 
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/php">
             <span className="txt">PHP</span>
-          </a>
+          </Link>
         </div>
 
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/rust">
             <span className="txt">Rust</span>
-          </a>
+          </Link>
         </div>
 
         <div className="SideNav-Item">
-          <a href="#/">
+          <Link to="/languages/sql">
             <span className="txt">SQL</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { FETCH_USER } from "./types";
+import { FETCH_USER, FETCH_DATA } from "./types";
 
 export const fetchUser = () => async (dispatch) => {
   const res = await axios.get("/api/current_user");
@@ -37,5 +37,16 @@ export const signup = (signupValues) => async (dispatch) => {
     })
     .catch((error) => {
       console.log(error);
+    });
+};
+
+export const AvgSalData = (vals) => async (dispatch) => {
+  await axios
+    .get("/auth/fetch_data", {
+      params: { queryVals: vals },
+    })
+    .then((res) => {
+      dispatch({ type: FETCH_DATA, payload: res.data });
+      return res.data;
     });
 };

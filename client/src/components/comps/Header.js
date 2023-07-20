@@ -34,7 +34,7 @@ class Header extends Component {
       default:
         return (
           <>
-            <Nav.Link href="#profile">Profile</Nav.Link>
+            <Nav.Link href="/profile">Profile</Nav.Link>
             <Nav.Link href="/api/logout">Logout</Nav.Link>
           </>
         );

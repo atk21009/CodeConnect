@@ -1,6 +1,0 @@
-.subpage_ctnr {
-  max-width: 100vw;
-  display: flex;
-  flex-grow: 1;
-  min-height: calc(100vh - 80px);
-}

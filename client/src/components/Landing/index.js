@@ -2,6 +2,8 @@ import React from "react";
 import Footer from "../comps/Footer";
 import imglist from "./Imgs";
 
+import { Link } from "react-router-dom";
+
 import logo_black from "../../constants/imgs/logo/code-connect--logo-white.png";
 import icon from "../../constants/imgs/logo/code-connect-website-favicon-white.png";
 
@@ -74,7 +76,7 @@ export default function Landing() {
         </div>
         <div className="landing-card">
           <div className="l-header">
-            <a href="#/">Programming Languages</a>
+            <Link to="/languages">Programming Languages</Link>
           </div>
 
           <div className="l-content">
@@ -108,7 +110,7 @@ export default function Landing() {
           <div className="landing-grid-ctn">
             <div className="landing-card">
               <div className="card-head">
-                <a href="#/">Concepts</a>
+                <Link to="/concepts">Concepts</Link>
               </div>
               <div className="card-desc">
                 <div className="con-desc">
@@ -125,7 +127,7 @@ export default function Landing() {
             </div>
             <div className="landing-card">
               <div className="card-head">
-                <a href="#/">Collaboration</a>
+                <Link to="/connect">Connect</Link>
               </div>
               <div className="card-desc">
                 <span>
@@ -139,7 +141,7 @@ export default function Landing() {
             </div>
             <div className="landing-card">
               <div className="card-head">
-                <a href="#/">Employment</a>
+                <Link to="/jobs">Employment</Link>
               </div>
               <div className="card-desc">
                 <span>
@@ -153,7 +155,7 @@ export default function Landing() {
             </div>
             <div className="landing-card">
               <div className="card-head">
-                <a href="#/">News</a>
+                <Link to="/news">News</Link>
               </div>
               <div className="card-desc">
                 <span>

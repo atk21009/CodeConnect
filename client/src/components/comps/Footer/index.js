@@ -35,36 +35,36 @@ export default function Footer() {
     <div className="footer">
       <div className="footer-content">
         <div className="footer-item">
-          <a href="#/" className="item-header">
+          <Link to="#/" className="item-header">
             Languages
-          </a>
+          </Link>
           {renderContent("Lang")}
         </div>
         <div className="footer-item">
-          <a href="#/" className="item-header">
+          <Link to="#/" className="item-header">
             Concepts
-          </a>
+          </Link>
           {renderContent("Con")}
         </div>
         <div className="footer-item">
-          <a href="#/" className="item-header">
+          <Link to="#/" className="item-header">
             Connect
-          </a>
+          </Link>
           {renderContent("Col")}
         </div>
         <div className="footer-item">
-          <a href="#/" className="item-header">
+          <Link to="#/" className="item-header">
             Employment
-          </a>
+          </Link>
           {renderContent("Jobs")}
         </div>
         <div className="footer-item">
-          <a href="#/" className="item-header">
+          <Link to="#/" className="item-header">
             News
-          </a>
-          <a href="#/" className="item-l">
+          </Link>
+          <Link to="#/" className="item-l">
             TEST
-          </a>
+          </Link>
         </div>
       </div>
       <div className="footer-btm">

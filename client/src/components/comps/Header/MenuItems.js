@@ -90,7 +90,7 @@ export const Jobs = [
   },
   {
     title: "Average Salaries",
-    path: "/jobs/averagesalaries",
+    path: "/jobs/averagesalary",
     cName: "dropdown-link",
   },
 ];

@@ -1,0 +1,245 @@
+/* Sub Pages */
+/* --------------------------*/
+.subpage_ctnr {
+  max-width: 100%;
+  display: flex;
+  flex-grow: 1;
+  min-height: calc(100vh - 80px);
+  background-color: lightgray;
+}
+
+.subpage_content {
+  width: 100%;
+  max-width: 100%;
+  min-height: auto;
+  background-color: lightgray;
+  border: 1px solid var(--grey);
+}
+
+.sub_header {
+  width: 100%;
+  background-color: var(--dark-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid var(--grey);
+}
+
+.sub_header span {
+  padding: 10px 20px;
+}
+
+.sub_ctnr {
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .subpage_ctnr {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Lang Pages */
+/* --------------------------*/
+
+.sub_head {
+  height: 20vh;
+  display: flex;
+  width: 100%;
+  padding: 20px 20px;
+  background-color: var(--dark-primary);
+  border-bottom: 1px solid var(--grey);
+}
+
+.sub_title {
+  width: 100%;
+  font-size: 36px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 0% 5%;
+}
+
+.sub_content {
+  width: 100%;
+  min-height: auto;
+  background-color: var(--dark-primary);
+  color: white;
+  border: 1px solid var(--grey);
+}
+
+.sub_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-primary);
+}
+
+.sub_card_header {
+  width: 90%;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 0px;
+  color: white;
+}
+
+.sub_card_header a {
+  color: white;
+}
+
+.sub_card_header a:hover {
+  text-decoration: none;
+  color: var(--grey);
+}
+
+.sub_card_desc {
+  width: 90%;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.sub_card_desc a {
+  color: white;
+}
+
+.sub_card_desc a:hover {
+  color: var(--grey);
+  text-decoration: none;
+}
+
+/* Lang Pages Containers */
+/* --------------------------*/
+.lang_sub_icon {
+  max-height: 128px;
+  max-width: 128px;
+}
+
+/* Sub Pages Containers */
+/* --------------------------*/
+
+/* Connect Pages */
+/* --------------------------*/
+
+/* Jobs Pages */
+/* --------------------------*/
+
+/* News Pages */
+/* --------------------------*/
+.news_content {
+  width: 100%;
+  min-height: auto;
+  background-color: var(--dark-primary);
+  color: white;
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+}
+
+/* Media Query Sub Pages */
+/* --------------------------*/
+@media screen and (max-width: 800px) {
+  .SideNav {
+    border-bottom: none;
+  }
+  .subpage_content {
+    border: none;
+    border-bottom: 1px solid var(--grey);
+  }
+  .sub_content {
+    border: none;
+  }
+}
+
+/* Average Sal Sub page*/
+.avg_sal_desc {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.avg_sal_table_ctnr {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: white;
+  padding: 20px;
+}
+.avg_sal_table {
+  width: 100%;
+  border: 1px solid var(--grey);
+}
+.avg_sal_table th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.avg_sal_table th {
+  background-color: var(--primary);
+  color: white;
+}
+.avg_sal_table tr {
+  background-color: #ebebeb;
+  color: black;
+}
+.avg_sal_table tr:nth-child(even) {
+  background-color: white;
+}
+.avg_sal_header {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  padding: 10px 0px;
+  color: white;
+}
+
+.filters {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  padding: 10px;
+}
+.filters select {
+  font-size: 16px;
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--dark-primary);
+  padding: 5px;
+}
+.applyFilters {
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 500;
+}
+.avg_sal_header form {
+  display: flex;
+  flex-direction: column;
+}
+.applyFilters:hover {
+  background-color: var(--primary-hover);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1000px) {
+  .filters {
+    max-width: auto;
+    grid-template-columns: repeat(2, 50%);
+  }
+}
