@@ -9,20 +9,23 @@ import FooterCR from "../comps/Footer/FooterCR";
 
 import icons from "../../constants/imgs/icons";
 
+import * as actions from "../../store/actions";
+
 let timer = null;
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      data: null,
       isLoading: true,
     };
   }
 
   getprops = async () => {
-    this.setState({ email: this.props.auth.local.email });
+    this.setState({ data: await this.props.getAll() });
     this.setState({ isLoading: false });
+    console.log(this);
   };
 
   componentWillUnmount() {
@@ -33,7 +36,6 @@ class Dashboard extends Component {
     if (this.state.isLoading) {
       timer = setTimeout(() => this.getprops(), 100);
     }
-
     return (
       <>
         <div className="dashboardContent">
@@ -59,13 +61,13 @@ class Dashboard extends Component {
                         <div className="auth-info-card">
                           <span className="auth-info-label">Username</span>
                           <span className="auth-info-val">
-                            {this.props.auth.local.username}
+                            {this.props.auth[1][0].username}
                           </span>
                         </div>
                         <div className="auth-info-card">
                           <span className="auth-info-label">Email</span>
                           <span className="auth-info-val">
-                            {this.props.auth.local.email}
+                            {this.props.auth[1][0].email}
                           </span>
                         </div>
                       </div>
@@ -173,4 +175,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, actions)(Dashboard);

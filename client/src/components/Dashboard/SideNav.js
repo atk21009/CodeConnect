@@ -9,6 +9,11 @@ export default function SideNav() {
     <div className="SideNav">
       <div className="SideNav-top">
         <div className="SideNav-Item">
+          <Link to="/dashboard">
+            <span className="txt">Dashboard</span>
+          </Link>
+        </div>
+        <div className="SideNav-Item">
           <Link to="/profile">
             <span className="txt">Profile</span>
             <img

@@ -1,5 +1,5 @@
 export const wy = {
-  title: "wkrYear",
+  title: "wrkYear",
   filters: ["Work Year", 2020, 2021, 2022, 2023],
 };
 

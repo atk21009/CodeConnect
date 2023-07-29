@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { FETCH_USER, FETCH_DATA } from "./types";
+import { FETCH_USER, FETCH_DATA, FETCH_FORMS } from "./types";
 
 export const fetchUser = () => async (dispatch) => {
   const res = await axios.get("/api/current_user");
@@ -49,4 +49,26 @@ export const AvgSalData = (vals) => async (dispatch) => {
       dispatch({ type: FETCH_DATA, payload: res.data });
       return res.data;
     });
+};
+
+export const submitForm = (values) => async (dispatch) => {
+  await axios.post("/auth/submit/form", {
+    params: { queryVals: values },
+  });
+};
+
+export const getForms = (values) => async (dispatch) => {
+  const res = await axios.get("/auth/forms", { params: { queryVals: values } });
+
+  dispatch({ type: FETCH_FORMS, payload: res.data });
+};
+
+export const deleteForm = (values) => async () => {
+  await axios.post("/auth/form/delete", values);
+};
+
+export const getAll = (val) => async (dispatch) => {
+  const res = await axios.get("/auth/data", val);
+
+  dispatch({ type: FETCH_USER, payload: res.data });
 };

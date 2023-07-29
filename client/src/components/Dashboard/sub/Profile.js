@@ -29,11 +29,83 @@ class Profile extends Component {
     clearTimeout(timer);
   }
 
+  renderExp() {
+    return (
+      <>
+        {this.props.auth.userInfo ? (
+          <div className="pfl-oc-wrk-exp">
+            <span className="pfl-oc-title">Job Title </span>
+            <span className="pfl-oc-company">Company </span>
+            <span className="pfl-oc-time">Time of Employment</span>
+            <span className="pfl-oc-desc">Description </span>
+            <span className="pfl-oc-loc">Location</span>
+            <span className="pfl-oc-skills">Skills *</span>
+          </div>
+        ) : (
+          <div className="pfl-oc-wrk-exp">Job History</div>
+        )}
+      </>
+    );
+  }
+
+  renderSkills() {
+    return (
+      <>
+        {this.props.auth.userInfo ? (
+          <div className="pfl-oc-wrk-exp">
+            <span className="pfl-oc-title">Skills </span>
+            <span className="pfl-oc-skills">Skills *</span>
+          </div>
+        ) : (
+          <div className="pfl-oc-wrk-exp">Skills</div>
+        )}
+      </>
+    );
+  }
+
+  renderResume() {
+    return (
+      <>
+        {this.props.auth.userInfo ? (
+          <div className="pfl-oc-wrk-exp">
+            <span className="pfl-oc-title">Resume </span>
+            <span className="pfl-oc-skills">Link to resume</span>
+            <span className="pfl-oc-skills">
+              <button>Upload</button>
+            </span>
+          </div>
+        ) : (
+          <div className="pfl-oc-wrk-exp">Resume</div>
+        )}
+      </>
+    );
+  }
+
+  renderCerts() {
+    return (
+      <>
+        {this.props.auth.userInfo ? (
+          <div className="pfl-oc-wrk-exp">
+            <span className="pfl-oc-title">Certifications</span>
+            <span className="pfl-oc-skills">Link to Cert</span>
+            <span className="pfl-oc-skills">Link to Cert</span>
+            <span className="pfl-oc-skills">Link to Cert</span>
+            <span className="pfl-oc-skills">Link to Cert</span>
+            <span className="pfl-oc-skills">
+              <button>Upload</button>
+            </span>
+          </div>
+        ) : (
+          <div className="pfl-oc-wrk-exp">Certifications</div>
+        )}
+      </>
+    );
+  }
+
   render() {
     if (this.state.isLoading) {
       timer = setTimeout(() => this.getprops(), 100);
     }
-
     return (
       <>
         {this.state.isLoading ? (
@@ -84,47 +156,10 @@ class Profile extends Component {
                         Information
                       </div>
                       <div className="pfl-user-info">
-                        <div className="pfl-oc-wrk-exp">
-                          <span className="pfl-oc-title">Job Title </span>
-                          <span className="pfl-oc-company">Company </span>
-                          <span className="pfl-oc-time">
-                            Time of Employment
-                          </span>
-                          <span className="pfl-oc-desc">Description </span>
-                          <span className="pfl-oc-loc">Location</span>
-                          <span className="pfl-oc-skills">Skills *</span>
-                        </div>
-                        <div className="pfl-oc-wrk-exp">
-                          <span className="pfl-oc-title">Job Title </span>
-                          <span className="pfl-oc-company">Company </span>
-                          <span className="pfl-oc-time">
-                            Time of Employment
-                          </span>
-                          <span className="pfl-oc-desc">Description </span>
-                          <span className="pfl-oc-loc">Location</span>
-                          <span className="pfl-oc-skills">Skills *</span>
-                        </div>
-                        <div className="pfl-oc-wrk-exp">
-                          <span className="pfl-oc-title">Skills </span>
-                          <span className="pfl-oc-skills">Skills *</span>
-                        </div>
-                        <div className="pfl-oc-wrk-exp">
-                          <span className="pfl-oc-title">Resume </span>
-                          <span className="pfl-oc-skills">Link to resume</span>
-                          <span className="pfl-oc-skills">
-                            <button>Upload</button>
-                          </span>
-                        </div>
-                        <div className="pfl-oc-wrk-exp">
-                          <span className="pfl-oc-title">Certifications</span>
-                          <span className="pfl-oc-skills">Link to Cert</span>
-                          <span className="pfl-oc-skills">Link to Cert</span>
-                          <span className="pfl-oc-skills">Link to Cert</span>
-                          <span className="pfl-oc-skills">Link to Cert</span>
-                          <span className="pfl-oc-skills">
-                            <button>Upload</button>
-                          </span>
-                        </div>
+                        {this.renderExp()}
+                        {this.renderSkills()}
+                        {this.renderCerts()}
+                        {this.renderResume()}
                       </div>
                     </div>
                   </div>

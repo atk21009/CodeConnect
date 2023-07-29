@@ -17,11 +17,147 @@ class AvgSal extends Component {
     this.state = {
       data: null,
       isLoading: true,
+      wySelected: "None",
+      elSelected: "None",
+      etSelected: "None",
+      jtSelected: "None",
+      sSelected: "None",
+      erSelected: "None",
+      rrSelected: "None",
+      clSelected: "None",
+      csSelected: "None",
+      rowsSelected: "None",
     };
   }
 
+  handleChange(e) {
+    const defValues = [
+      "Work Year",
+      "Experience Level",
+      "Employment Type",
+      "Job Title",
+      "Salary",
+      "Employee Residence",
+      "Remote Ratio",
+      "Company Location",
+      "Company Size",
+      "Row Limit",
+    ];
+
+    if (defValues.includes(e.value) === false) {
+      switch (e.id) {
+        case "wrkYear":
+          this.setState({ wySelected: `${e.value}` });
+          break;
+        case "expLevel":
+          this.setState({ elSelected: `${e.value}` });
+          break;
+        case "empType":
+          this.setState({ etSelected: `${e.value}` });
+          break;
+        case "jt":
+          this.setState({ jtSelected: `${e.value}` });
+          break;
+        case "sal":
+          this.setState({ sSelected: `${e.value}` });
+          break;
+        case "er":
+          this.setState({ erSelected: `${e.value}` });
+          break;
+        case "rr":
+          this.setState({ rrSelected: `${e.value}` });
+          break;
+        case "cl":
+          this.setState({ clSelected: `${e.value}` });
+          break;
+        case "cs":
+          this.setState({ csSelected: `${e.value}` });
+          break;
+        case "rows":
+          this.setState({ rowsSelected: `${e.value}` });
+          break;
+        default:
+          break;
+      }
+    } else {
+      switch (e.id) {
+        case "wrkYear":
+          this.setState({ wySelected: "None" });
+          break;
+        case "expLevel":
+          this.setState({ elSelected: "None" });
+          break;
+        case "empType":
+          this.setState({ etSelected: "None" });
+          break;
+        case "jt":
+          this.setState({ jtSelected: "None" });
+          break;
+        case "sal":
+          this.setState({ sSelected: "None" });
+          break;
+        case "er":
+          this.setState({ erSelected: "None" });
+          break;
+        case "rr":
+          this.setState({ rrSelected: "None" });
+          break;
+        case "cl":
+          this.setState({ clSelected: "None" });
+          break;
+        case "cs":
+          this.setState({ csSelected: "None" });
+          break;
+        case "rows":
+          this.setState({ rowsSelected: "None" });
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    timer = clearInterval(timer);
+  }
+
   componentDidMount() {
-    this.props.AvgSalData("Hello");
+    this.props.AvgSalData("None,None,None,None,None,None,None,None,None,None");
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.AvgSalData(
+      `${this.state.wySelected},${this.state.elSelected},${this.state.etSelected},${this.state.jtSelected},${this.state.sSelected},${this.state.erSelected},${this.state.rrSelected},${this.state.clSelected},${this.state.csSelected},${this.state.rowsSelected}`
+    );
+  }
+
+  clearFilters(e) {
+    e.preventDefault();
+
+    this.setState({ wySelected: "None" });
+    this.setState({ elSelected: "None" });
+    this.setState({ etSelected: "None" });
+    this.setState({ jtSelected: "None" });
+    this.setState({ sSelected: "None" });
+    this.setState({ erSelected: "None" });
+    this.setState({ rrSelected: "None" });
+    this.setState({ clSelected: "None" });
+    this.setState({ csSelected: "None" });
+    this.setState({ rowsSelected: "None" });
+
+    this.props.AvgSalData("None,None,None,None,None,None,None,None,None,None");
+
+    document.getElementById("wrkYear").value = wy.filters[0];
+    document.getElementById("expLevel").value = el.filters[0];
+    document.getElementById("empType").value = et.filters[0];
+    document.getElementById("jt").value = jt.filters[0];
+    document.getElementById("sal").value = s.filters[0];
+    document.getElementById("er").value = er.filters[0];
+    document.getElementById("rr").value = rr.filters[0];
+    document.getElementById("cl").value = cl.filters[0];
+    document.getElementById("cs").value = cs.filters[0];
+    document.getElementById("rows").value = rows.filters[0];
   }
 
   async getData() {
@@ -42,7 +178,7 @@ class AvgSal extends Component {
           <td key={key + 2}>{rowSplit[1]}</td>
           <td key={key + 3}>{rowSplit[2]}</td>
           <td key={key + 4}>{rowSplit[3]}</td>
-          <td key={key + 5}>{rowSplit[6]}</td>
+          <td key={key + 5}>${rowSplit[6]}</td>
           <td key={key + 6}>{rowSplit[7]}</td>
           <td key={key + 7}>{rowSplit[8]}</td>
           <td key={key + 8}>{rowSplit[9]}</td>
@@ -67,52 +203,82 @@ class AvgSal extends Component {
     ];
     return (
       <>
-        <select name={wy.title}>
+        <select
+          id={wy.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[0].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={el.title}>
+        <select
+          id={el.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[1].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={et.title}>
+        <select
+          id={et.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[2].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={jt.title}>
+        <select
+          id={jt.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[3].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={s.title}>
+        <select
+          id={s.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[4].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={er.title}>
+        <select
+          id={er.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[5].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={rr.title}>
+        <select
+          id={rr.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[6].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={cl.title}>
+        <select
+          id={cl.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[7].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={cs.title}>
+        <select
+          id={cs.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[8].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
         </select>
-        <select name={rows.title}>
+        <select
+          id={rows.title}
+          onChange={(event) => this.handleChange(event.target)}
+        >
           {filter_list[9].map((filter) => (
             <option value={filter}>{filter}</option>
           ))}
@@ -145,7 +311,18 @@ class AvgSal extends Component {
                       <form>
                         <div className="filters">{this.renderFilters()}</div>
 
-                        <button className="applyFilters">Apply Filters</button>
+                        <button
+                          className="applyFilters"
+                          onClick={(e) => this.handleSubmit(e)}
+                        >
+                          Apply Filters
+                        </button>
+                        <button
+                          className="applyFilters"
+                          onClick={(e) => this.clearFilters(e)}
+                        >
+                          Clear Filters
+                        </button>
                       </form>
                     </div>
                     <div className="avg_sal_table_ctnr">

@@ -7,6 +7,12 @@ const userSchema = mongoose.Schema({
     email: String,
     password: String,
   },
+  userInfo: {
+    wrkExp: [],
+    skills: [],
+    certs: [],
+    resume: String,
+  },
 });
 
 // generating a hash

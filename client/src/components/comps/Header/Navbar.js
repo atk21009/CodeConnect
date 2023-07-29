@@ -118,7 +118,7 @@ class Navbar extends Component {
   render() {
     return (
       <>
-        <nav className="navbar">
+        <nav className="navbar" id="navbar">
           <Link
             to="/"
             className="navbar-logo"

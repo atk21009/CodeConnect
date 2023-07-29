@@ -5,7 +5,7 @@ import icon from "../../../constants/imgs/logo/code-connect--logo-white.png";
 
 export default function FooterCR() {
   return (
-    <div className="footer-btm">
+    <div className="footer-btm" id="footerCR">
       <div className="footer-logo-ctn">
         <img src={icon} alt="logo" className="footer-logo" />
       </div>

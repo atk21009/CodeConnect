@@ -12,7 +12,7 @@ export default function Collaboration() {
           <div className="sub_header">
             <span>Collaboration</span>
           </div>
-          <div className="sub_card_desc">
+          <div className="sub_card_desc_ctnr">
             <div className="sub_card">
               <div className="sub_card_header">TEST</div>
               <div className="sub_card_desc">test</div>

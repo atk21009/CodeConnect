@@ -85,7 +85,7 @@
 
 .sub_card_header {
   width: 90%;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
   text-align: left;
   padding: 10px 0px;
@@ -101,11 +101,18 @@
   color: var(--grey);
 }
 
+.sub_card_desc_ctnr {
+  width: 100%;
+}
+
 .sub_card_desc {
   width: 90%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   padding-bottom: 20px;
+  color: var(--grey);
+}
+.sub_card_desc strong {
   color: white;
 }
 
@@ -130,12 +137,187 @@
 
 /* Connect Pages */
 /* --------------------------*/
+.form_card_header {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+.search_input {
+  max-height: 100%;
+  width: 100%;
+  border: 1px solid white;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: 500;
+  background-color: var(--dark-primary);
+  color: white;
+}
+.search_input::placeholder {
+  color: white;
+}
+.form_card_header input:focus {
+  max-height: 100%;
+  border: none;
+  background-color: var(--primary-hover);
+  border: 1px solid white;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+}
+.form_card_header_search {
+  display: flex;
+  width: 80%;
+}
+.form_card_header_create button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px;
+  background-color: var(--dark-primary);
+  border: 1px solid white;
+  color: white;
+}
+.form_card_header_create button:hover {
+  background-color: var(--primary-hover);
+}
+.form_card_header_create {
+  width: 10%;
+}
+
+.form_card_ctnr {
+  width: calc(100% - 20px);
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+}
+.form_card_ctnr i {
+  position: absolute;
+  right: 20px;
+  top: auto;
+  font-size: 24px;
+  cursor: pointer;
+}
+.form_info {
+  width: 20%;
+}
+.form_desc {
+  width: 80%;
+}
+.form_card_head {
+  font-size: 24px;
+  font-weight: 500;
+}
+.form_info_content {
+  color: var(--grey);
+}
+
+.createForm {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(80% - 20px);
+  height: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  filter: blur(0);
+  color: white;
+}
+
+.createForm_header {
+  width: 100%;
+  background-color: var(--primary);
+  padding: 10px;
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+.createForm_header i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.createForm_header i:hover {
+  color: var(--grey);
+}
+
+.createForm_header_input {
+  color: var(--dark-primary);
+  border-bottom: 1px solid var(--dark-primary);
+}
+.createForm_header_input input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--dark-primary);
+  border-bottom: 1px solid var(--dark-primary);
+}
+.createForm_header_input input:focus {
+  outline: none;
+}
+
+.createForm_desc_input {
+  color: var(--dark-primary);
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.createForm_desc_input textarea {
+  height: 100%;
+  width: 100%;
+  resize: none;
+  outline: none;
+  padding: 10px;
+  color: var(--dark-primary);
+  font-size: 18px;
+  border: none;
+}
+.createForm_desc_input textarea:focus {
+  outline: none;
+  color: var(--dark-primary);
+}
+.createForm_desc_input button {
+  width: 100%;
+  margin: none;
+  padding: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  border: none;
+}
+.createForm_desc_input button:hover {
+  background-color: var(--primary-hover);
+}
 
 /* Jobs Pages */
 /* --------------------------*/
 
 /* News Pages */
 /* --------------------------*/
+.news_content_card {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .news_content {
   width: 100%;
   min-height: auto;
@@ -143,6 +325,49 @@
   color: white;
   border-top: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
+}
+.news_card {
+  width: 90%;
+  display: flex;
+  border: 1px solid var(--grey);
+  margin-top: 10px;
+}
+.news_card_section {
+  width: 30%;
+  padding: 15px;
+}
+.news_card_desc {
+  width: 40%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+.news_card_title {
+  font-size: 24px;
+}
+.news_card_title a {
+  color: white;
+}
+.news_card_title a:hover {
+  text-decoration: none;
+  color: var(--grey);
+}
+
+.news_card_auth,
+.news_card_pt,
+.news_card_p {
+  font-size: 16px;
+  color: var(--grey);
+}
+.news_card_img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news_article_img {
+  min-width: 30%;
+  max-width: 100%;
 }
 
 /* Media Query Sub Pages */
@@ -219,6 +444,7 @@ td {
   color: white;
   border-color: var(--dark-primary);
   padding: 5px;
+  cursor: pointer;
 }
 .applyFilters {
   padding: 10px;
